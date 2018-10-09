@@ -1,0 +1,30 @@
+$ telnet localhost 8000
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+What's your name?
+Jessica
+Welcome, Jessica!
+Adam has joined the channel.
+Hey Adam!
+<Adam> How's it going?
+I've got a working Twisted chat server now, so pretty great!
+^]
+telnet> quit
+Connection closed.
+$ telnet localhost 8000
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+What's your name?
+Adam
+Welcome, Adam!
+<Jessica> Hey Adam!
+How's it going?
+<Jessica> I've got a working Twisted chat server now, so pretty great!
+Jessica has left the channel.
+
+
+# To terminate a telnet connection, hold down the Control key and press
+# the right-bracket key. That will drop you to a telnet> prompt; from
+# there, type quit and press the Return key to terminate the connection.
