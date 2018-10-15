@@ -1,10 +1,3 @@
-
-__metaclass__ = type
-
-
-
-
-
-if __name__ == '__main__':
-    import sys
-    print sys.path
+str = 'hello, world'
+double_quoted_str = '"%s"' % str
+print(double_quoted_str)
