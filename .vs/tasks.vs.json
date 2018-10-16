@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskName": "任务-build",
+      "appliesTo": "omniORBPy/build.py",
+      "type": "launch"
+    }
+  ]
+}

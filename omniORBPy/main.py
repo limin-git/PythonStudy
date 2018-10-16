@@ -1,16 +1,11 @@
 # encoding: utf-8
-import sys
-import os
-import os.path
+from use_ta_idl import omniorb, TA_Base_Core
 
-OMNIORBPY_HOME = r'C:\MyCots\omniORB\omniORBpy-4.2.2-win64-python2.7\omniORBpy-4.2.2'
-OMNIORBPY_LIB_PYTHON = os.path.join(OMNIORBPY_HOME, r'lib\python')
-OMNIORBPY_LIB_X86_WIN32 = os.path.join(OMNIORBPY_HOME, r'lib\x86_win32')
-OMNIORBPY_BIN_X86_WIN32 = os.path.join(OMNIORBPY_HOME, r'bin\x86_win32')
+def resolve_system_controller():
+    try:
+        corbaloc = 'corbaloc::179.90.10.11:6666/SystemControllerAdmin'
+        admin = omniorb.string_to_object(corbaloc)._narrow(TA_Base_Core.ISystemControllerAdminCorbaDef)
+        print admin.getProcessData()
+    except: pass
 
-sys.path.insert(0, OMNIORBPY_LIB_PYTHON)
-sys.path.insert(0, OMNIORBPY_LIB_X86_WIN32)
-os.environ['PATH'] = ';'.join([os.environ['PATH'], OMNIORBPY_BIN_X86_WIN32])
-
-import CORBA
-g_orb = CORBA.ORB_init(sys.argv, CORBA.ORB_ID)
+resolve_system_controller()
